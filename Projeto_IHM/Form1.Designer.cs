@@ -44,7 +44,7 @@
             this.btnDes = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnMensagen = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMsg = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -90,7 +90,7 @@
             // cbBoxPort
             // 
             this.cbBoxPort.FormattingEnabled = true;
-            this.cbBoxPort.Location = new System.Drawing.Point(84, 13);
+            this.cbBoxPort.Location = new System.Drawing.Point(83, 13);
             this.cbBoxPort.Name = "cbBoxPort";
             this.cbBoxPort.Size = new System.Drawing.Size(89, 21);
             this.cbBoxPort.TabIndex = 1;
@@ -176,6 +176,7 @@
             this.btnCon.TabIndex = 1;
             this.btnCon.Text = "Open Port";
             this.btnCon.UseVisualStyleBackColor = false;
+            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
             // 
             // btnDes
             // 
@@ -187,6 +188,7 @@
             this.btnDes.TabIndex = 10;
             this.btnDes.Text = "Close Port";
             this.btnDes.UseVisualStyleBackColor = false;
+            this.btnDes.Click += new System.EventHandler(this.btnDes_Click);
             // 
             // btnExit
             // 
@@ -204,21 +206,21 @@
             // 
             this.pnMensagen.BackColor = System.Drawing.Color.Red;
             this.pnMensagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnMensagen.Controls.Add(this.label1);
-            this.pnMensagen.Location = new System.Drawing.Point(6, 269);
+            this.pnMensagen.Controls.Add(this.lblMsg);
+            this.pnMensagen.Location = new System.Drawing.Point(7, 269);
             this.pnMensagen.Name = "pnMensagen";
             this.pnMensagen.Size = new System.Drawing.Size(167, 65);
             this.pnMensagen.TabIndex = 1;
             // 
-            // label1
+            // lblMsg
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Open Port";
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMsg.Location = new System.Drawing.Point(33, 18);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(96, 24);
+            this.lblMsg.TabIndex = 1;
+            this.lblMsg.Text = "Open Port";
             // 
             // tabControl1
             // 
@@ -272,6 +274,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "IHM para Microcontrolador";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnl1.ResumeLayout(false);
@@ -300,7 +303,7 @@
         private System.Windows.Forms.Button btnDes;
         private System.Windows.Forms.Button btnCon;
         private System.Windows.Forms.Panel pnMensagen;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMsg;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
