@@ -30,29 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnl1 = new System.Windows.Forms.Panel();
-            this.lblPort = new System.Windows.Forms.Label();
-            this.cbBoxPort = new System.Windows.Forms.ComboBox();
-            this.cbBoxBaud = new System.Windows.Forms.ComboBox();
-            this.lblBaud = new System.Windows.Forms.Label();
-            this.cbBoxData = new System.Windows.Forms.ComboBox();
-            this.lblData = new System.Windows.Forms.Label();
-            this.cbBoxStop = new System.Windows.Forms.ComboBox();
-            this.lblStop = new System.Windows.Forms.Label();
-            this.cbBoxParity = new System.Windows.Forms.ComboBox();
-            this.lblParity = new System.Windows.Forms.Label();
-            this.btnCon = new System.Windows.Forms.Button();
-            this.btnDes = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.pnMensagen = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnDes = new System.Windows.Forms.Button();
+            this.btnCon = new System.Windows.Forms.Button();
+            this.cbBoxParity = new System.Windows.Forms.ComboBox();
+            this.lblParity = new System.Windows.Forms.Label();
+            this.cbBoxStop = new System.Windows.Forms.ComboBox();
+            this.lblStop = new System.Windows.Forms.Label();
+            this.cbBoxData = new System.Windows.Forms.ComboBox();
+            this.lblData = new System.Windows.Forms.Label();
+            this.cbBoxBaud = new System.Windows.Forms.ComboBox();
+            this.lblBaud = new System.Windows.Forms.Label();
+            this.cbBoxPort = new System.Windows.Forms.ComboBox();
+            this.lblPort = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tx = new System.Windows.Forms.GroupBox();
+            this.chBoxEnviar = new System.Windows.Forms.CheckBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.txtEnviar = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.pnl1.SuspendLayout();
             this.pnMensagen.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tx.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl1
@@ -77,131 +83,6 @@
             this.pnl1.Size = new System.Drawing.Size(186, 337);
             this.pnl1.TabIndex = 0;
             // 
-            // lblPort
-            // 
-            this.lblPort.AutoSize = true;
-            this.lblPort.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPort.Location = new System.Drawing.Point(3, 18);
-            this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(71, 16);
-            this.lblPort.TabIndex = 1;
-            this.lblPort.Text = "COM Port:";
-            // 
-            // cbBoxPort
-            // 
-            this.cbBoxPort.FormattingEnabled = true;
-            this.cbBoxPort.Location = new System.Drawing.Point(83, 13);
-            this.cbBoxPort.Name = "cbBoxPort";
-            this.cbBoxPort.Size = new System.Drawing.Size(89, 21);
-            this.cbBoxPort.TabIndex = 1;
-            // 
-            // cbBoxBaud
-            // 
-            this.cbBoxBaud.FormattingEnabled = true;
-            this.cbBoxBaud.Location = new System.Drawing.Point(84, 50);
-            this.cbBoxBaud.Name = "cbBoxBaud";
-            this.cbBoxBaud.Size = new System.Drawing.Size(89, 21);
-            this.cbBoxBaud.TabIndex = 2;
-            // 
-            // lblBaud
-            // 
-            this.lblBaud.AutoSize = true;
-            this.lblBaud.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBaud.Location = new System.Drawing.Point(3, 55);
-            this.lblBaud.Name = "lblBaud";
-            this.lblBaud.Size = new System.Drawing.Size(77, 16);
-            this.lblBaud.TabIndex = 3;
-            this.lblBaud.Text = "Baud Rate:";
-            // 
-            // cbBoxData
-            // 
-            this.cbBoxData.FormattingEnabled = true;
-            this.cbBoxData.Location = new System.Drawing.Point(84, 91);
-            this.cbBoxData.Name = "cbBoxData";
-            this.cbBoxData.Size = new System.Drawing.Size(89, 21);
-            this.cbBoxData.TabIndex = 4;
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(3, 96);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(67, 16);
-            this.lblData.TabIndex = 5;
-            this.lblData.Text = "Data Bits:";
-            // 
-            // cbBoxStop
-            // 
-            this.cbBoxStop.FormattingEnabled = true;
-            this.cbBoxStop.Location = new System.Drawing.Point(84, 133);
-            this.cbBoxStop.Name = "cbBoxStop";
-            this.cbBoxStop.Size = new System.Drawing.Size(89, 21);
-            this.cbBoxStop.TabIndex = 6;
-            // 
-            // lblStop
-            // 
-            this.lblStop.AutoSize = true;
-            this.lblStop.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStop.Location = new System.Drawing.Point(3, 138);
-            this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(67, 16);
-            this.lblStop.TabIndex = 7;
-            this.lblStop.Text = "Stop Bits:";
-            // 
-            // cbBoxParity
-            // 
-            this.cbBoxParity.FormattingEnabled = true;
-            this.cbBoxParity.Location = new System.Drawing.Point(84, 172);
-            this.cbBoxParity.Name = "cbBoxParity";
-            this.cbBoxParity.Size = new System.Drawing.Size(89, 21);
-            this.cbBoxParity.TabIndex = 8;
-            // 
-            // lblParity
-            // 
-            this.lblParity.AutoSize = true;
-            this.lblParity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParity.Location = new System.Drawing.Point(3, 177);
-            this.lblParity.Name = "lblParity";
-            this.lblParity.Size = new System.Drawing.Size(48, 16);
-            this.lblParity.TabIndex = 9;
-            this.lblParity.Text = "Parity:";
-            // 
-            // btnCon
-            // 
-            this.btnCon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCon.Location = new System.Drawing.Point(6, 205);
-            this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(75, 23);
-            this.btnCon.TabIndex = 1;
-            this.btnCon.Text = "Open Port";
-            this.btnCon.UseVisualStyleBackColor = false;
-            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
-            // 
-            // btnDes
-            // 
-            this.btnDes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDes.Enabled = false;
-            this.btnDes.Location = new System.Drawing.Point(98, 205);
-            this.btnDes.Name = "btnDes";
-            this.btnDes.Size = new System.Drawing.Size(75, 23);
-            this.btnDes.TabIndex = 10;
-            this.btnDes.Text = "Close Port";
-            this.btnDes.UseVisualStyleBackColor = false;
-            this.btnDes.Click += new System.EventHandler(this.btnDes_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(6, 240);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(170, 23);
-            this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // pnMensagen
             // 
             this.pnMensagen.BackColor = System.Drawing.Color.Red;
@@ -222,6 +103,131 @@
             this.lblMsg.TabIndex = 1;
             this.lblMsg.Text = "Open Port";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(6, 240);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(170, 23);
+            this.btnExit.TabIndex = 11;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnDes
+            // 
+            this.btnDes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDes.Enabled = false;
+            this.btnDes.Location = new System.Drawing.Point(98, 205);
+            this.btnDes.Name = "btnDes";
+            this.btnDes.Size = new System.Drawing.Size(75, 23);
+            this.btnDes.TabIndex = 10;
+            this.btnDes.Text = "Close Port";
+            this.btnDes.UseVisualStyleBackColor = false;
+            this.btnDes.Click += new System.EventHandler(this.btnDes_Click);
+            // 
+            // btnCon
+            // 
+            this.btnCon.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCon.Location = new System.Drawing.Point(6, 205);
+            this.btnCon.Name = "btnCon";
+            this.btnCon.Size = new System.Drawing.Size(75, 23);
+            this.btnCon.TabIndex = 1;
+            this.btnCon.Text = "Open Port";
+            this.btnCon.UseVisualStyleBackColor = false;
+            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
+            // 
+            // cbBoxParity
+            // 
+            this.cbBoxParity.FormattingEnabled = true;
+            this.cbBoxParity.Location = new System.Drawing.Point(84, 172);
+            this.cbBoxParity.Name = "cbBoxParity";
+            this.cbBoxParity.Size = new System.Drawing.Size(89, 21);
+            this.cbBoxParity.TabIndex = 8;
+            // 
+            // lblParity
+            // 
+            this.lblParity.AutoSize = true;
+            this.lblParity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParity.Location = new System.Drawing.Point(3, 177);
+            this.lblParity.Name = "lblParity";
+            this.lblParity.Size = new System.Drawing.Size(48, 16);
+            this.lblParity.TabIndex = 9;
+            this.lblParity.Text = "Parity:";
+            // 
+            // cbBoxStop
+            // 
+            this.cbBoxStop.FormattingEnabled = true;
+            this.cbBoxStop.Location = new System.Drawing.Point(84, 133);
+            this.cbBoxStop.Name = "cbBoxStop";
+            this.cbBoxStop.Size = new System.Drawing.Size(89, 21);
+            this.cbBoxStop.TabIndex = 6;
+            // 
+            // lblStop
+            // 
+            this.lblStop.AutoSize = true;
+            this.lblStop.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStop.Location = new System.Drawing.Point(3, 138);
+            this.lblStop.Name = "lblStop";
+            this.lblStop.Size = new System.Drawing.Size(67, 16);
+            this.lblStop.TabIndex = 7;
+            this.lblStop.Text = "Stop Bits:";
+            // 
+            // cbBoxData
+            // 
+            this.cbBoxData.FormattingEnabled = true;
+            this.cbBoxData.Location = new System.Drawing.Point(84, 91);
+            this.cbBoxData.Name = "cbBoxData";
+            this.cbBoxData.Size = new System.Drawing.Size(89, 21);
+            this.cbBoxData.TabIndex = 4;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(3, 96);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(67, 16);
+            this.lblData.TabIndex = 5;
+            this.lblData.Text = "Data Bits:";
+            // 
+            // cbBoxBaud
+            // 
+            this.cbBoxBaud.FormattingEnabled = true;
+            this.cbBoxBaud.Location = new System.Drawing.Point(84, 50);
+            this.cbBoxBaud.Name = "cbBoxBaud";
+            this.cbBoxBaud.Size = new System.Drawing.Size(89, 21);
+            this.cbBoxBaud.TabIndex = 2;
+            // 
+            // lblBaud
+            // 
+            this.lblBaud.AutoSize = true;
+            this.lblBaud.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBaud.Location = new System.Drawing.Point(3, 55);
+            this.lblBaud.Name = "lblBaud";
+            this.lblBaud.Size = new System.Drawing.Size(77, 16);
+            this.lblBaud.TabIndex = 3;
+            this.lblBaud.Text = "Baud Rate:";
+            // 
+            // cbBoxPort
+            // 
+            this.cbBoxPort.FormattingEnabled = true;
+            this.cbBoxPort.Location = new System.Drawing.Point(83, 13);
+            this.cbBoxPort.Name = "cbBoxPort";
+            this.cbBoxPort.Size = new System.Drawing.Size(89, 21);
+            this.cbBoxPort.TabIndex = 1;
+            // 
+            // lblPort
+            // 
+            this.lblPort.AutoSize = true;
+            this.lblPort.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPort.Location = new System.Drawing.Point(3, 18);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(71, 16);
+            this.lblPort.TabIndex = 1;
+            this.lblPort.Text = "COM Port:";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -235,6 +241,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tx);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -242,6 +249,47 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monitor Serial";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tx
+            // 
+            this.tx.BackColor = System.Drawing.Color.Silver;
+            this.tx.Controls.Add(this.chBoxEnviar);
+            this.tx.Controls.Add(this.btnEnviar);
+            this.tx.Controls.Add(this.txtEnviar);
+            this.tx.Location = new System.Drawing.Point(6, 6);
+            this.tx.Name = "tx";
+            this.tx.Size = new System.Drawing.Size(281, 73);
+            this.tx.TabIndex = 0;
+            this.tx.TabStop = false;
+            this.tx.Text = "Transmissao";
+            // 
+            // chBoxEnviar
+            // 
+            this.chBoxEnviar.AutoSize = true;
+            this.chBoxEnviar.Location = new System.Drawing.Point(6, 45);
+            this.chBoxEnviar.Name = "chBoxEnviar";
+            this.chBoxEnviar.Size = new System.Drawing.Size(41, 17);
+            this.chBoxEnviar.TabIndex = 2;
+            this.chBoxEnviar.Text = "CR";
+            this.chBoxEnviar.UseVisualStyleBackColor = true;
+            // 
+            // btnEnviar
+            // 
+            this.btnEnviar.Location = new System.Drawing.Point(200, 19);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 20);
+            this.btnEnviar.TabIndex = 1;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
+            // 
+            // txtEnviar
+            // 
+            this.txtEnviar.Location = new System.Drawing.Point(6, 19);
+            this.txtEnviar.Name = "txtEnviar";
+            this.txtEnviar.Size = new System.Drawing.Size(188, 20);
+            this.txtEnviar.TabIndex = 0;
+            this.txtEnviar.Click += new System.EventHandler(this.txtEnviar_Click);
             // 
             // tabPage2
             // 
@@ -282,6 +330,9 @@
             this.pnMensagen.ResumeLayout(false);
             this.pnMensagen.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tx.ResumeLayout(false);
+            this.tx.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -309,6 +360,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.GroupBox tx;
+        private System.Windows.Forms.TextBox txtEnviar;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.CheckBox chBoxEnviar;
     }
 }
 

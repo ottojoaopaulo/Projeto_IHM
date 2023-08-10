@@ -150,5 +150,22 @@ namespace Projeto_IHM
                 lblMsg.Text = "Close Port";
             }
         }
+
+        private void txtEnviar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen == true)
+            {
+                serialPort1.Write(txtEnviar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Erro de Comunicacao com a porta!");
+            }
+        }
     }
 }
