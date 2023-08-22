@@ -47,18 +47,38 @@
             this.lblPort = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRec = new System.Windows.Forms.TextBox();
+            this.btnApagar = new System.Windows.Forms.Button();
             this.tx = new System.Windows.Forms.GroupBox();
             this.chBoxEnviar = new System.Windows.Forms.CheckBox();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.txtEnviar = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBotao2 = new System.Windows.Forms.Button();
+            this.pnLed2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBotao1 = new System.Windows.Forms.Button();
+            this.pnLed1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblS1 = new System.Windows.Forms.Label();
+            this.lblS2 = new System.Windows.Forms.Label();
+            this.lblSensor1 = new System.Windows.Forms.Label();
+            this.lblSensor2 = new System.Windows.Forms.Label();
             this.pnl1.SuspendLayout();
             this.pnMensagen.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tx.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.pnLed2.SuspendLayout();
+            this.pnLed1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl1
@@ -241,6 +261,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.tx);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -249,6 +270,36 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monitor Serial";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.txtRec);
+            this.groupBox1.Controls.Add(this.btnApagar);
+            this.groupBox1.Location = new System.Drawing.Point(6, 85);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(281, 220);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Recepcao";
+            // 
+            // txtRec
+            // 
+            this.txtRec.Location = new System.Drawing.Point(6, 48);
+            this.txtRec.Multiline = true;
+            this.txtRec.Name = "txtRec";
+            this.txtRec.Size = new System.Drawing.Size(269, 158);
+            this.txtRec.TabIndex = 1;
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.Location = new System.Drawing.Point(200, 19);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(75, 23);
+            this.btnApagar.TabIndex = 0;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // tx
             // 
@@ -293,6 +344,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnBotao2);
+            this.tabPage2.Controls.Add(this.pnLed2);
+            this.tabPage2.Controls.Add(this.btnBotao1);
+            this.tabPage2.Controls.Add(this.pnLed1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -301,14 +356,133 @@
             this.tabPage2.Text = "Botoes/Leds";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnBotao2
+            // 
+            this.btnBotao2.Location = new System.Drawing.Point(126, 15);
+            this.btnBotao2.Name = "btnBotao2";
+            this.btnBotao2.Size = new System.Drawing.Size(75, 23);
+            this.btnBotao2.TabIndex = 3;
+            this.btnBotao2.Text = "Botao 2";
+            this.btnBotao2.UseVisualStyleBackColor = true;
+            this.btnBotao2.Click += new System.EventHandler(this.btnBotao2_Click);
+            // 
+            // pnLed2
+            // 
+            this.pnLed2.BackColor = System.Drawing.Color.Maroon;
+            this.pnLed2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnLed2.Controls.Add(this.label2);
+            this.pnLed2.Location = new System.Drawing.Point(126, 56);
+            this.pnLed2.Name = "pnLed2";
+            this.pnLed2.Size = new System.Drawing.Size(75, 52);
+            this.pnLed2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Led 2";
+            // 
+            // btnBotao1
+            // 
+            this.btnBotao1.Location = new System.Drawing.Point(21, 15);
+            this.btnBotao1.Name = "btnBotao1";
+            this.btnBotao1.Size = new System.Drawing.Size(75, 23);
+            this.btnBotao1.TabIndex = 1;
+            this.btnBotao1.Text = "Botao 1";
+            this.btnBotao1.UseVisualStyleBackColor = true;
+            this.btnBotao1.Click += new System.EventHandler(this.btnBotao1_Click);
+            // 
+            // pnLed1
+            // 
+            this.pnLed1.BackColor = System.Drawing.Color.Maroon;
+            this.pnLed1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnLed1.Controls.Add(this.label1);
+            this.pnLed1.Enabled = false;
+            this.pnLed1.Location = new System.Drawing.Point(21, 56);
+            this.pnLed1.Name = "pnLed1";
+            this.pnLed1.Size = new System.Drawing.Size(75, 52);
+            this.pnLed1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Led 1";
+            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(293, 311);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Sensores";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.Controls.Add(this.lblSensor2);
+            this.groupBox2.Controls.Add(this.lblSensor1);
+            this.groupBox2.Controls.Add(this.lblS2);
+            this.groupBox2.Controls.Add(this.lblS1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(14, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(264, 154);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            // 
+            // lblS1
+            // 
+            this.lblS1.AutoSize = true;
+            this.lblS1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS1.Location = new System.Drawing.Point(21, 31);
+            this.lblS1.Name = "lblS1";
+            this.lblS1.Size = new System.Drawing.Size(106, 27);
+            this.lblS1.TabIndex = 0;
+            this.lblS1.Text = "Sensor 1:";
+            this.lblS1.Click += new System.EventHandler(this.lblS1_Click);
+            // 
+            // lblS2
+            // 
+            this.lblS2.AutoSize = true;
+            this.lblS2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblS2.Location = new System.Drawing.Point(21, 93);
+            this.lblS2.Name = "lblS2";
+            this.lblS2.Size = new System.Drawing.Size(106, 27);
+            this.lblS2.TabIndex = 1;
+            this.lblS2.Text = "Sensor 2:";
+            // 
+            // lblSensor1
+            // 
+            this.lblSensor1.AutoSize = true;
+            this.lblSensor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSensor1.Location = new System.Drawing.Point(157, 31);
+            this.lblSensor1.Name = "lblSensor1";
+            this.lblSensor1.Size = new System.Drawing.Size(69, 29);
+            this.lblSensor1.TabIndex = 2;
+            this.lblSensor1.Text = "0000";
+            this.lblSensor1.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lblSensor2
+            // 
+            this.lblSensor2.AutoSize = true;
+            this.lblSensor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSensor2.Location = new System.Drawing.Point(157, 93);
+            this.lblSensor2.Name = "lblSensor2";
+            this.lblSensor2.Size = new System.Drawing.Size(69, 29);
+            this.lblSensor2.TabIndex = 3;
+            this.lblSensor2.Text = "0000";
+            this.lblSensor2.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
@@ -331,8 +505,18 @@
             this.pnMensagen.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tx.ResumeLayout(false);
             this.tx.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.pnLed2.ResumeLayout(false);
+            this.pnLed2.PerformLayout();
+            this.pnLed1.ResumeLayout(false);
+            this.pnLed1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,6 +548,20 @@
         private System.Windows.Forms.TextBox txtEnviar;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.CheckBox chBoxEnviar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtRec;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnBotao2;
+        private System.Windows.Forms.Panel pnLed2;
+        private System.Windows.Forms.Button btnBotao1;
+        private System.Windows.Forms.Panel pnLed1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblS1;
+        private System.Windows.Forms.Label lblSensor2;
+        private System.Windows.Forms.Label lblSensor1;
+        private System.Windows.Forms.Label lblS2;
     }
 }
 

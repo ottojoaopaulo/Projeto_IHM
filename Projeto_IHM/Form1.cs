@@ -13,9 +13,94 @@ namespace Projeto_IHM
 {
     public partial class Form1 : Form
     {
+        delegate void funcaoRecepcao();
+
         public Form1()
+            //comando de interupcao do microcontrolador
         {
             InitializeComponent();
+
+            serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort1_DataReceived);
+        }
+
+        void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            funcaoRecepcao recepcaodelegate = new funcaoRecepcao(RecepcaoSerial);
+            Invoke(recepcaodelegate);
+        }
+
+        String chtxt = null, str = null;
+        public void RecepcaoSerial()
+        {
+
+            chtxt += serialPort1.ReadExisting();
+            txtRec.Text += chtxt;
+            str += chtxt;
+            chtxt = null;
+                  //01234567
+            //texto [LeD1ON] ou [LeD1OF]
+            //texto [A10000]
+
+
+            if (str.Substring(0, 1).Equals("["))
+            {
+                if (str.Length >= 8)
+                {
+                    if (str.Substring(1, 1).Equals("L") &&
+                        str.Substring(2, 1).Equals("e") &&
+                        str.Substring(3, 1).Equals("D") &&
+                        str.Substring(5, 1).Equals("O") &&
+                        str.Substring(7, 1).Equals("]"))
+                    {
+                        if (str.Substring(6, 1).Equals("N"))
+                        {
+                            switch (str.Substring(4, 1))
+                            {
+                                case "1":
+                                    pnLed1.BackColor = Color.Red;
+                                    break;
+                                case "2":
+                                    pnLed2.BackColor = Color.Red;
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            if (str.Substring(6, 1).Equals("F"))
+                            {
+                                switch (str.Substring(4, 1))
+                                {
+                                    case "1":
+                                        pnLed1.BackColor = Color.Maroon;
+                                        break;
+                                    case "2":
+                                        pnLed2.BackColor = Color.Maroon;
+                                        break;
+                                }
+
+                            }
+                        }
+                    }
+                    else 
+                    {
+                        if (str.Substring(1, 1).Equals("A") && str.Substring(7, 1).Equals("]"))
+                        {
+                            if (str.Substring(2, 1).Equals("1"))
+                            {
+                                lblSensor1.Text = str.Substring(3, 4);
+                            }
+                            else
+                            {
+                                if (str.Substring(2, 1).Equals("2"))
+                                {
+                                    lblSensor2.Text = str.Substring(3, 4);
+                                }
+                            }
+                            str = null;
+                        }
+                    }
+                }
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -160,12 +245,51 @@ namespace Projeto_IHM
         {
             if (serialPort1.IsOpen == true)
             {
-                serialPort1.Write(txtEnviar.Text);
+                if (chBoxEnviar.Checked)
+                {
+                    serialPort1.Write(txtEnviar.Text + "\r");
+                }
+                else
+                {
+                    serialPort1.Write(txtEnviar.Text);
+                }
+                txtEnviar.Text = null;
             }
             else
             {
                 MessageBox.Show("Erro de Comunicacao com a porta!");
             }
+        }
+        //texto [Botao1]
+        private void btnBotao1_Click(object sender, EventArgs e)
+        {
+            if(serialPort1.IsOpen == true) serialPort1.Write("[Botao1]");
+        }
+
+        private void btnBotao2_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen == true) serialPort1.Write("[Botao2]");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblS1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //comando para limpar area de recepcao de dados
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            txtRec.Text = null;
         }
     }
 }
