@@ -37,7 +37,7 @@ namespace Projeto_IHM
             txtRec.Text += chtxt;
             str += chtxt;
             chtxt = null;
-                  //01234567
+            //01234567
             //texto [LeD1ON] ou [LeD1OF]
             //texto [A10000]
 
@@ -77,30 +77,38 @@ namespace Projeto_IHM
                                         pnLed2.BackColor = Color.Maroon;
                                         break;
                                 }
-
                             }
                         }
+                        str = null;
                     }
-                    else 
+                    else
                     {
                         if (str.Substring(1, 1).Equals("A") && str.Substring(7, 1).Equals("]"))
                         {
                             if (str.Substring(2, 1).Equals("1"))
                             {
                                 lblSensor1.Text = str.Substring(3, 4);
+                                pgBar1.Value = int.Parse(str.Substring(3, 4));
                             }
                             else
                             {
                                 if (str.Substring(2, 1).Equals("2"))
                                 {
                                     lblSensor2.Text = str.Substring(3, 4);
+                                    pgBar2.Value = int.Parse(str.Substring(3, 4));
                                 }
                             }
                             str = null;
                         }
                     }
+                    str = null;
                 }
             }
+            else
+            {
+                str = null;
+            }
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -186,6 +194,7 @@ namespace Projeto_IHM
                 cbBoxParity.Enabled = false;
                 pnMensagen.BackColor = Color.Green;
                 lblMsg.Text = "Close Port";
+                
             }
             catch
             {
@@ -200,6 +209,7 @@ namespace Projeto_IHM
                 cbBoxParity.Enabled = true;
                 pnMensagen.BackColor = Color.Red;
                 lblMsg.Text = "Open Port";
+
             }
         }
 
@@ -218,7 +228,12 @@ namespace Projeto_IHM
                 cbBoxParity.Enabled = true;
                 pnMensagen.BackColor = Color.Red;
                 lblMsg.Text = "Open Port";
-                
+                pgBar1.Value = 0;
+                pgBar2.Value = 0;
+                lblSensor1.Text = "0000";
+                lblSensor2.Text = "0000";
+                txtRec.Text = null;
+
             }
             catch
             {
@@ -270,7 +285,7 @@ namespace Projeto_IHM
         {
             if (serialPort1.IsOpen == true) serialPort1.Write("[Botao2]");
         }
-
+        //texto [Botao2]
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -286,10 +301,17 @@ namespace Projeto_IHM
 
         }
 
+        private void BarPWM_Scroll(object sender, EventArgs e)
+        {
+            int valorPWM = BarPWM.Value * 50;
+            serialPort1.Write("[PWM" + valorPWM.ToString() + "]");
+        }
+
         //comando para limpar area de recepcao de dados
         private void btnApagar_Click(object sender, EventArgs e)
         {
             txtRec.Text = null;
+            
         }
     }
 }

@@ -68,6 +68,10 @@
             this.lblS2 = new System.Windows.Forms.Label();
             this.lblSensor1 = new System.Windows.Forms.Label();
             this.lblSensor2 = new System.Windows.Forms.Label();
+            this.BarPWM = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pgBar1 = new System.Windows.Forms.ProgressBar();
+            this.pgBar2 = new System.Windows.Forms.ProgressBar();
             this.pnl1.SuspendLayout();
             this.pnMensagen.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -79,6 +83,7 @@
             this.pnLed1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BarPWM)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl1
@@ -344,6 +349,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.BarPWM);
             this.tabPage2.Controls.Add(this.btnBotao2);
             this.tabPage2.Controls.Add(this.pnLed2);
             this.tabPage2.Controls.Add(this.btnBotao1);
@@ -379,7 +386,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 23);
+            this.label2.Location = new System.Drawing.Point(18, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 5;
@@ -409,7 +416,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 19);
+            this.label1.Location = new System.Drawing.Point(17, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 4;
@@ -428,6 +435,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.Controls.Add(this.pgBar2);
+            this.groupBox2.Controls.Add(this.pgBar1);
             this.groupBox2.Controls.Add(this.lblSensor2);
             this.groupBox2.Controls.Add(this.lblSensor1);
             this.groupBox2.Controls.Add(this.lblS2);
@@ -435,7 +444,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(14, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(264, 154);
+            this.groupBox2.Size = new System.Drawing.Size(264, 274);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
@@ -456,7 +465,7 @@
             this.lblS2.AutoSize = true;
             this.lblS2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblS2.Location = new System.Drawing.Point(21, 93);
+            this.lblS2.Location = new System.Drawing.Point(21, 162);
             this.lblS2.Name = "lblS2";
             this.lblS2.Size = new System.Drawing.Size(106, 27);
             this.lblS2.TabIndex = 1;
@@ -477,12 +486,51 @@
             // 
             this.lblSensor2.AutoSize = true;
             this.lblSensor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSensor2.Location = new System.Drawing.Point(157, 93);
+            this.lblSensor2.Location = new System.Drawing.Point(157, 162);
             this.lblSensor2.Name = "lblSensor2";
             this.lblSensor2.Size = new System.Drawing.Size(69, 29);
             this.lblSensor2.TabIndex = 3;
             this.lblSensor2.Text = "0000";
             this.lblSensor2.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // BarPWM
+            // 
+            this.BarPWM.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BarPWM.Location = new System.Drawing.Point(21, 196);
+            this.BarPWM.Name = "BarPWM";
+            this.BarPWM.Size = new System.Drawing.Size(180, 45);
+            this.BarPWM.TabIndex = 4;
+            this.BarPWM.Scroll += new System.EventHandler(this.BarPWM_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(64, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Led_PWM";
+            // 
+            // pgBar1
+            // 
+            this.pgBar1.BackColor = System.Drawing.Color.LightBlue;
+            this.pgBar1.ForeColor = System.Drawing.Color.Red;
+            this.pgBar1.Location = new System.Drawing.Point(20, 94);
+            this.pgBar1.Maximum = 1024;
+            this.pgBar1.Name = "pgBar1";
+            this.pgBar1.Size = new System.Drawing.Size(205, 23);
+            this.pgBar1.TabIndex = 4;
+            // 
+            // pgBar2
+            // 
+            this.pgBar2.BackColor = System.Drawing.Color.LightBlue;
+            this.pgBar2.ForeColor = System.Drawing.Color.Red;
+            this.pgBar2.Location = new System.Drawing.Point(21, 217);
+            this.pgBar2.Maximum = 1024;
+            this.pgBar2.Name = "pgBar2";
+            this.pgBar2.Size = new System.Drawing.Size(205, 23);
+            this.pgBar2.TabIndex = 5;
             // 
             // Form1
             // 
@@ -510,6 +558,7 @@
             this.tx.ResumeLayout(false);
             this.tx.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.pnLed2.ResumeLayout(false);
             this.pnLed2.PerformLayout();
             this.pnLed1.ResumeLayout(false);
@@ -517,6 +566,7 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BarPWM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -562,6 +612,10 @@
         private System.Windows.Forms.Label lblSensor2;
         private System.Windows.Forms.Label lblSensor1;
         private System.Windows.Forms.Label lblS2;
+        private System.Windows.Forms.TrackBar BarPWM;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ProgressBar pgBar2;
+        private System.Windows.Forms.ProgressBar pgBar1;
     }
 }
 
