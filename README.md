@@ -17,6 +17,10 @@ Programa de comunicacao Serial  <br/>
 
 
 
+https://github.com/ottojoaopaulo/Projeto_IHM/assets/100943474/f27cb5fd-973d-4c5a-897b-083f24fa85a0
+
+
+
 
 </p>
 
@@ -27,8 +31,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - C#
 - Git e Github
 - VSPEmulador
-- Hercules
+- Hercules SETUP utility
 
 ## 💻 Projeto
 
-Consulta de CEP de todo pais, usando API
+Projeto simulando uma comunicacao serial com equipamento, informando as portas seriais a serem utilizadas, enviando e recebendo dados.
